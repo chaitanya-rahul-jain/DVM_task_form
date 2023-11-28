@@ -57,9 +57,6 @@ function validateForm() {
 
   var isValid = true;
 
-
-  
-
   // Validate name
   if (name === "" || name.length < 5 || name.length > 50) {
     document.getElementById("nameError").textContent =
@@ -87,20 +84,19 @@ function validateForm() {
     isValid = false;
   }
 
-  if (hostel === '') {
+  if (hostel === "") {
     document.getElementById("hostelError").textContent =
       "Please choose your hostel";
     isValid = false;
   }
 
-  if (!size){
-    document.getElementById("sizeError").textContent =
-      "Please choose a size";
+  if (!size) {
+    document.getElementById("sizeError").textContent = "Please choose a size";
     isValid = false;
   }
 
-  if (!agree){
-    document.getElementById("agreeError").textContent = 
+  if (!agree) {
+    document.getElementById("agreeError").textContent =
       "Please agree to the terms and conditions to continue";
     isValid = false;
   }
@@ -115,7 +111,12 @@ function validateForm() {
       size: size.value,
       agree: agree,
     };
-    logData();
+    console.log("name:" + name);
+    console.log("email:" + email);
+    console.log("phone:" + phone);
+    console.log("bitsID:" + bitsID);
+    console.log("hostel:" + hostel);
+    console.log("size:" + size.value);
     sendFormData(formData);
     saveFormDataToLocalStorage(formData);
   }
@@ -132,15 +133,6 @@ function validationBitsID(id) {
 function validatePhone(phone) {
   var phoneRegex = /^\d{10}$/;
   return phoneRegex.test(phone);
-}
-
-function logData(){
-  console.log("name:" + name);
-  console.log("email:" + email);
-  console.log("phone:" + phone);
-  console.log("bitsID:" + bitsID);
-  console.log("hostel:" + hostel);
-  console.log("size:" + size);
 }
 
 function sendFormData(formData) {
