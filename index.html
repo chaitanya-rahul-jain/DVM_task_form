@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>DVM Merch Registration</title>
+  </head>
+
+  <body>
+    <form id="RegistrationForm">
+      <div class="name">
+        <label for="name">Name<span class="required_sign">*</span></label>
+        <input
+        type="text"
+        id="name"
+        name="name"
+        minlength="5"
+        maxlength="50"
+        required
+        />
+        <span id="nameError" class="error"></span>
+      </div>
+
+      <div class="email">
+        <label for="email">Email<span class="required_sign">*</span></label>
+        <input type="text" id="email" name="email" required />
+        <span id="emailError" class="error"></span>
+      </div>
+
+      <div class="phone">
+        <label for="phone"
+          >Phone Number<span class="required_sign">*</span></label
+        >
+        <input
+        type="text"
+        id="phone"
+        name="phone"
+        pattern="[0-9]{10}"
+        required
+        />
+        <span id="phoneError" class="error"></span>
+      </div>
+
+      <div class="bitsID">
+        <label for="bitsID">BITS ID<span class="required_sign">*</span></label>
+        <input type="text" id="bitsID" name="bitsID" required />
+        <span id="idError" class="error"></span>
+      </div>
+
+      <div class="hostel">
+        <label for="hostel">Hostel<span class="required_sign">*</span></label>
+        <select id="hostel" name="hostel" required>
+          <option value="" disabled selected>Select your hostel</option>
+          <option value="hostel1">SR Bhawan</option>
+          <option value="hostel2">CV Raman Bhavan</option>
+          <option value="hostel3">Malviya Bhawan</option>
+          <option value="hostel4">Ram Bhawan</option>
+          <option value="hostel5">Vyas Bhawan</option>
+          <option value="hostel6">Shankar Bhawan</option>
+          <option value="hostel7">Gandhi Bhawan</option>
+          <option value="hostel8">Ashok Bhawan</option>
+          <option value="hostel9">Bhagirath Bhawan</option>
+          <option value="hostel10">Rana Pratap Bhawan</option>
+          <option value="hostel11">Vishwakarma Bhawan</option>
+          <option value="hostel12">Krishna Bhawan</option>
+          <option value="hostel13">Meera Bhawan</option>
+          <option value="hostel14">Budh Bhawan</option>
+        </select>
+        <span id="hostelError" class="error"></span>
+      </div>
+
+      <div class="radio_size_selector">
+        <label>Size<span class="required_sign">*</span></label>
+        <div>
+          <input
+            type="radio"
+            id="sizeSmall"
+            name="size"
+            value="small"
+            required
+          />
+          <label for="sizeSmall">Small</label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            id="sizeMedium"
+            name="size"
+            value="medium"
+            required
+          />
+          <label for="sizeMedium">Medium</label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            id="sizeLarge"
+            name="size"
+            value="large"
+            required
+          />
+          <label for="sizeLarge">Large</label>
+        </div>
+        <span id="sizeError" class="error"></span>
+
+      </div>
+
+      <div class="terms_conditions">
+        <label>
+          <input type="checkbox" id="agree" name="agree" required />
+          I agree to the <a href="">terms and conditions</a
+          ><span class="required_sign">*</span>
+        </label>
+        <span id="agreeError" class="error"></span>
+
+      </div>
+
+      <div class="submit_reset">
+        <button type="reset">Reset</button>
+        <button type="button" onclick="validateForm()">Submit</button>
+      </div>
+    </form>
+
+    <div id="successModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeSuccessModal()">&times;</span>
+        <p>Form submitted successfully!</p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

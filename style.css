@@ -1,0 +1,181 @@
+body {
+  font-family: roboto;
+  background-color: #7ED7C1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+}
+
+form {
+  display: flex;
+  background-color: #F0DBAF;
+  flex-wrap: wrap;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 80vw;
+}
+
+form > div {
+  width: 40%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.radio_size_selector {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.radio_size_selector > label {
+  width: 100%;
+}
+
+.radio_size_selector > div {
+  width: 30%;
+  display: flex;
+  align-items: start;
+  gap: 10px;
+}
+
+.submit_reset{
+  display: flex;
+  gap: 30px;
+  justify-content: flex-end;
+}
+
+label {
+  font-size: 18px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 8px;
+}
+
+input[type=text]{
+  font-size: 18px;
+  background-color: #DC8686;
+  width: 100%;
+  height: 30px;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+}
+
+input[type="text"]:focus {
+  outline: 2px solid #B06161;
+}
+
+select {
+  font-size: 17px;
+  background-color: #DC8686;
+  width: 100%;
+  height: 43px;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+}
+
+
+option {
+  height: 15px;
+}
+
+button {
+  background-color: #DC8686;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #B06161;
+}
+
+a{
+  color: #B06161;
+  text-decoration: none;
+}
+
+.error {
+  color: red;
+  margin-top: 5px;
+  display: block;
+}
+
+.required_sign {
+  color: red;
+}
+
+
+/* modal */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  form {
+    width: 60vw;
+  }
+  form > div {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 750px) {
+  form {
+    width: 60vw;
+  }
+  body {
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
+  .radio_size_selector > div {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    margin: 5px;
+  }
+
+}
