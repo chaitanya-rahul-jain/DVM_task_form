@@ -127,8 +127,36 @@ function validateEmail(email) {
   return emailRegex.test(email);
 }
 function validationBitsID(id) {
-  var idRegex = /^20\d{2}[A-Za-z0-9]{2}PS\d{4}[PGH]$/;
-  return idRegex.test(id);
+  var idRegex = /^20\d{2}[A-Za-z0-9]{4}\d{4}[PGHpgh]$/;
+  const singleBranches = [
+    "a1",
+    "a2",
+    "a3",
+    "a4",
+    "a5",
+    "a7",
+    "a8",
+    "a9",
+    "aa",
+    "ab",
+  ];
+  const dualBranches = ["b1", "b2", "b3", "b4", "b5"];
+  const idCheck = ["ps", "ts"];
+  if (idRegex.test(id)) {
+    if (
+      singleBranches.includes(id.slice(4, 6).toLowerCase()) ||
+      dualBranches.includes(id.slice(4, 6).toLowerCase())
+    ) {
+      if (
+        singleBranches.includes(id.slice(6, 8).toLowerCase()) ||
+        dualBranches.includes(id.slice(6, 8).toLowerCase()) ||
+        idCheck.includes(id.slice(6, 8).toLowerCase())
+      ) {
+        return 1;
+      }
+    }
+  }
+  return 0;
 }
 function validatePhone(phone) {
   var phoneRegex = /^\d{10}$/;
@@ -146,5 +174,33 @@ function sendFormData(formData) {
 
   showSuccessModal();
 }
+
+// carousel
+
+const prev = document.getElementById("prev-btn");
+const next = document.getElementById("next-btn");
+const list = document.getElementById("item-list");
+const itemWidth = 150;
+const padding = 10;
+
+var carouselItem;
+var imgSrc;
+
+prev.addEventListener("click", () => {
+  list.scrollLeft -= itemWidth + padding;
+
+  // making the carousel infinite
+
+  // carouselItem = document.querySelector("#item-list");
+  // imgSrc = carouselItem.lastElementChild.getAttribute("src");
+  // carouselItem.insertBefore(document.createElement("img"), carouselItem.firstElementChild);
+  // carouselItem.lastElementChild.remove();
+  // carouselItem.firstElementChild.setAttribute("src", imgSrc);
+  // carouselItem.firstElementChild.setAttribute("class", "item");
+  // console.log(carouselItem);
+});
+next.addEventListener("click", () => {
+  list.scrollLeft += itemWidth + padding;
+});
 
 window.onload = populateFormWithStoredData;

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="style.css" />
 
     <title>DVM Merch Registration</title>
+    <link rel="icon" href="./assets/images/website-logo.jpg">
   </head>
 
   <body>
@@ -112,6 +113,28 @@
 
       </div>
 
+      <div class="carousel">
+        <div class="carousel-view">
+          <!-- Left Button -->
+          <button type="button" id="prev-btn" class="prev-btn cr-btn"><span>&#8249;</span></button>
+  
+          <!-- List Container -->
+          <div id="item-list" class="item-list">
+            <!-- Items -->
+            <img class="item" src="./assets/images/hoodies/h1.png" />
+            <img class="item" src="./assets/images/hoodies/h3.png" />
+            <img class="item" src="./assets/images/hoodies/h2.png" />
+            <img class="item" src="./assets/images/hoodies/h4.png" />
+            <img class="item" src="./assets/images/hoodies/h5.png" />
+            <img class="item" src="./assets/images/hoodies/h6.png" />
+            <img class="item" src="./assets/images/hoodies/h7.png" />
+          </div>
+  
+          <!-- Right Button -->
+          <button type="button" id="next-btn" class="next-btn cr-btn"><span>&#8250;</span></button>
+        </div>
+      </div>
+
       <div class="terms_conditions">
         <label>
           <input type="checkbox" id="agree" name="agree" required />
@@ -124,7 +147,7 @@
 
       <div class="submit_reset">
         <button type="reset">Reset</button>
-        <button type="button" onclick="validateForm()">Submit</button>
+        <button type="button" class="submit" onclick="validateForm()">Submit</button>
       </div>
     </form>
 

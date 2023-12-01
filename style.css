@@ -179,3 +179,86 @@ a{
   }
 
 }
+
+/* carousel */
+
+.carousel {
+  width: 100%;
+}
+
+.carousel-view {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 44px 0;
+  gap: 40px;
+  transition: all 0.25s ease-in;
+
+}
+
+.carousel-view span {
+  font-size: 30px;
+}
+
+.carousel-view button {
+  display: flex;
+  align-items: center;
+}
+
+/* implementing carousel */
+
+.item {
+  scroll-snap-align: center;
+  border-radius: 8px;
+}
+
+.item-list {
+  width: 900px;
+  display: flex;
+  scroll-behavior: smooth;
+  overflow: auto;
+  scroll-snap-type: x mandatory;
+  gap: 31px;
+  transition: all 0.25s ease-in;
+
+}
+
+.item-list .item {
+  width: 260px;
+  height: 320px;
+}
+
+/* hiding scrollbar */
+.item-list::-webkit-scrollbar {
+  display: none;
+}
+
+.item-list {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.cr-btn {
+  height: 40px;
+}
+
+@media (max-width: 1460px) {
+.item-list {
+  max-width: 600px;
+}
+
+}
+
+@media (max-width: 1050px) {
+  .item-list {
+    max-width: 600px;
+  }
+  .carousel-view{
+    gap: 1vw;
+  }
+  .item-list .item {
+    width: 130px;
+    height: 165px;
+  }
+}
